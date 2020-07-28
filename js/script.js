@@ -30,6 +30,7 @@ const changeColor = () => {
 
 const startHandler = () => {
 	refs.start.removeEventListener('click', startHandler);
+	refs.start.setAttribute("disabled", true);
 	console.log('click');
 	intervalId = setInterval(
 		changeColor
@@ -38,6 +39,7 @@ const startHandler = () => {
 
 const stopHandler = () => {
 	refs.start.addEventListener('click', startHandler);
+	refs.start.removeAttribute("disabled");
 	clearInterval(intervalId);
 }
 
